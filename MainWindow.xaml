@@ -1,0 +1,55 @@
+﻿<Window x:Class="SerpCarpet.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SerpCarpet"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="9*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid
+            Grid.Column="0"
+            Background="#efefef">
+
+            <StackPanel
+                Margin="3"
+                Orientation="Vertical">
+
+                <Label Content="Fractal Type" HorizontalAlignment="Center"/>
+                <RadioButton GroupName="fractalType" x:Name="curveRb" Margin="0 3" Content="Curve" IsChecked="True"/>
+                <RadioButton GroupName="fractalType" x:Name="triangleRb" Margin="0 3" Content="Triangle"/>
+                <RadioButton GroupName="fractalType" x:Name="squareRb" Margin="0 3" Content="Square"/>
+
+                <Label Content="Depth" HorizontalAlignment="Center"/>
+                <TextBox
+                    x:Name="fractalDepth"/>
+
+                <Label Content="X, Y Length" HorizontalAlignment="Center"/>
+                <TextBox
+                    x:Name="deltaLineLength"/>
+
+                <Button
+                    Content="Start"
+                    Click="StartClick"
+                    Margin="0 5 0 5"/>
+
+                <Button
+                    Content="Clear"
+                    Click="ClearClick"
+                    Margin="0 0 0 5"/>
+
+            </StackPanel>
+        </Grid>
+        
+        <Canvas
+            x:Name="contentGrid"
+            Grid.Column="1"
+            Margin="10"/>
+        
+    </Grid>
+</Window>
